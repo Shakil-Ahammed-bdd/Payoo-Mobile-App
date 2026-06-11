@@ -51,7 +51,14 @@ function handleButtonToggle(id){
     document.getElementById(id).classList.remove('border-gray-300')
     document.getElementById(id).classList.add('border-[#0874f2]', 'bg-[#0874f20d]')
 }
-
+//  h2 text bold and color 
+function handleTextToggle(id){
+    const allId = ["h2-add-money","h2-cash-out","h2-transfer-money","h2-get-bonus","h2-pay-bill","h2-transactions"]
+    for(const text of allId){
+        document.getElementById(text).classList.remove('font-bold','text-[#0874f2]')
+    }
+    document.getElementById(id).classList.add('font-bold','text-[#0874f2]')
+}
 // logout button
 document.getElementById('logout-btn').addEventListener('click',function(){
     window.location.href="./index.html"
@@ -282,6 +289,7 @@ document.getElementById('add-button').addEventListener('click',function(){
     handleToggle('add-money-parent')
 
     handleButtonToggle('add-button')
+    handleTextToggle("h2-add-money")
     
 })
 // cash out
@@ -289,6 +297,7 @@ document.getElementById('cash-out-button').addEventListener('click',function(){
     handleToggle('cash-out-parent')
 
     handleButtonToggle('cash-out-button')
+    handleTextToggle("h2-cash-out")
     
 })
 // transfer money
@@ -296,22 +305,26 @@ document.getElementById('transfer-button').addEventListener('click',function(){
     handleToggle('transfer-parent')
 
     handleButtonToggle("transfer-button")
+    handleTextToggle('h2-transfer-money')
 })
 // bonus
 document.getElementById('bonus-button').addEventListener('click',function(){
     handleToggle('bonus-parent')
 
     handleButtonToggle('bonus-button')
+    handleTextToggle("h2-get-bonus")
 })
 // pay bill
 document.getElementById('pay-bill').addEventListener('click',function(){
     handleToggle('pay-bill-parent')
 
     handleButtonToggle('pay-bill')
+    handleTextToggle("h2-pay-bill")
 })
 // transactions
 document.getElementById('transaction').addEventListener('click',function(){
     handleToggle('transaction-parent')
 
     handleButtonToggle('transaction')
+    handleTextToggle("h2-transactions")
 })
